@@ -1,17 +1,13 @@
 import './App.css';
-import searchIcon from './search.svg';
+import Searchbar from './components/Searchbar';
+import Title from './components/Title';
 
 function App() {
   return (
     <div className="app">
       <div className="container">
-        <div className="title">
-          <h1>Book API Search App</h1>
-        </div>
-        <div className="search">
-          <input type="text" placeholder="Search a book..." />
-          <img src={searchIcon} alt="search icon" />
-        </div>
+        <Title />
+        <Searchbar />
       </div>
     </div>
   );
