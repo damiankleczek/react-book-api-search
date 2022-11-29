@@ -8,7 +8,12 @@ function BookCard({ book }) {
   const title = book.volumeInfo.title;
   const author = book.volumeInfo.authors.join(' & ');
   const publishDate = book.volumeInfo.publishedDate;
-  const isbn = book.volumeInfo.industryIdentifiers[1].identifier;
+  const isbnNums = book.volumeInfo.industryIdentifiers;
+
+  const getIsbn = nums => {
+    const isbn13 = nums?.find(num => num.type === 'ISBN_13')?.identifier;
+    return isbn13;
+  };
 
   return (
     <div className="book">
@@ -26,7 +31,7 @@ function BookCard({ book }) {
           </p>
           <p>
             <strong>{`ISBN Number:\n`}</strong>
-            {isbn}
+            {getIsbn(isbnNums) ?? 'ISBN Not Specified'}
           </p>
         </div>
       </div>
