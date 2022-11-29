@@ -1,12 +1,14 @@
 import React from 'react';
 
+import DetailInfo from './DetailInfo';
+
 function BookCard({ book }) {
   const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
   const placeholderUrl =
     'https://dummyimage.com/208x320/fff/000000&text=Image+Not+Available';
 
   const title = book.volumeInfo.title;
-  const author = book.volumeInfo.authors.join(' & ');
+  const author = book.volumeInfo.authors?.join(' & ');
   const publishDate = book.volumeInfo.publishedDate;
   const isbnNums = book.volumeInfo.industryIdentifiers;
 
@@ -23,16 +25,9 @@ function BookCard({ book }) {
       <div className="info">
         <h4>{title}</h4>
         <div className="hidden">
-          <p>
-            <strong>Author:</strong> {author}
-          </p>
-          <p>
-            <strong>Publish Date:</strong> {publishDate}
-          </p>
-          <p>
-            <strong>{`ISBN Number:\n`}</strong>
-            {getIsbn(isbnNums) ?? 'ISBN Not Specified'}
-          </p>
+          <DetailInfo label="Author" data={author} />
+          <DetailInfo label="Publish Date" data={publishDate} />
+          <DetailInfo label="ISBN Number" data={getIsbn(isbnNums)} />
         </div>
       </div>
     </div>
