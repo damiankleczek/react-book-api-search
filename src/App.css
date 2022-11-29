@@ -71,6 +71,7 @@ body {
   border-radius: 0.6em;
   box-shadow: 1px 1px 5px var(--color-shadow);
   margin: 2em 0 0 1em;
+  padding-bottom: 0.5em;
 }
 
 .book .img-container {
@@ -100,9 +101,11 @@ body {
   text-align: center;
   transition: 0.3s linear;
   height: 20%;
+  overflow: hidden;
 }
 
 .book:hover .info {
+  overflow: visible;
   transform: translateY(-13em);
   transition: 0.4s ease-out;
 }
