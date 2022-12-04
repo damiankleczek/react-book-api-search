@@ -17,7 +17,7 @@ body {
 .app {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .container {
@@ -62,7 +62,7 @@ body {
 }
 
 .books-container {
-  margin-top: 2em;
+  margin: 2em 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -75,7 +75,7 @@ body {
   height: 25em;
   border-radius: 0.6em;
   box-shadow: 1px 1px 5px var(--color-shadow);
-  margin: 2em 0 0 1em;
+  margin: 2em 1em 0 1em;
   padding-bottom: 0.5em;
 }
 
