@@ -11,6 +11,7 @@ function BookCard({ book }) {
   const author = book.volumeInfo.authors?.join(' & ');
   const publishDate = book.volumeInfo.publishedDate;
   const isbnNums = book.volumeInfo.industryIdentifiers;
+  const bookPreviewUrl = book.volumeInfo.previewLink;
 
   const getIsbn = nums => {
     const isbn13 = nums?.find(num => num.type === 'ISBN_13')?.identifier;
@@ -20,14 +21,28 @@ function BookCard({ book }) {
   return (
     <div className="book">
       <div className="img-container">
-        <img src={thumbnail ?? placeholderUrl} alt="book thumbnail" />
+        <img
+          src={thumbnail ?? placeholderUrl}
+          alt="book thumbnail"
+        />
       </div>
       <div className="info">
-        <h4>{title}</h4>
+        <h4>
+          <a href={bookPreviewUrl}>{title}</a>
+        </h4>
         <div className="hidden">
-          <DetailInfo label="Author" data={author} />
-          <DetailInfo label="Publish Date" data={publishDate} />
-          <DetailInfo label="ISBN Number" data={getIsbn(isbnNums)} />
+          <DetailInfo
+            label="Author"
+            data={author}
+          />
+          <DetailInfo
+            label="Publish Date"
+            data={publishDate}
+          />
+          <DetailInfo
+            label="ISBN Number"
+            data={getIsbn(isbnNums)}
+          />
         </div>
       </div>
     </div>

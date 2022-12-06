@@ -115,6 +115,11 @@ body {
   transition: 0.4s ease-out;
 }
 
+.book .info a {
+  text-decoration: none;
+  color: #000;
+}
+
 .book .info .hidden {
   opacity: 0;
   padding-left: 0.5em;
