@@ -24,6 +24,9 @@ function Searchbar({ searchUrl, handleSetBooks }) {
         onChange={e => {
           handleInputChange(e.target.value);
         }}
+        onKeyDown={e => {
+          if (e.key === 'Enter') searchBooks(searchTerm);
+        }}
       />
       <img
         src={searchIcon}
