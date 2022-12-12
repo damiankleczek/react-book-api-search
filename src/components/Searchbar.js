@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import searchIcon from '../search.svg';
 
-function Searchbar({ searchUrl, handleSetBooks }) {
+function Searchbar({ searchUrl, maxResults, handleSetBooks }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = value => {
     setSearchTerm(value);
   };
 
+  const searchQuery = `${searchUrl}?q=${searchTerm}&maxResults=${maxResults}`;
+
   const searchBooks = async () => {
-    const response = await fetch(`${searchUrl}?q=${searchTerm}`);
+    const response = await fetch(searchQuery);
     const data = await response.json();
     handleSetBooks(data);
     handleInputChange('');

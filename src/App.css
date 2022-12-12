@@ -134,3 +134,32 @@ body {
 .hidden p {
   margin: 0.5em;
 }
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.5em;
+  border-radius: 0.6em;
+  box-shadow: 1px 1px 3px var(--color-shadow);
+  cursor: pointer;
+}
+
+.page-button:last-child {
+  margin-right: 0;
+}
+
+.page-active {
+  color: #fff;
+  background-color: #555;
+  transform: translateY(-0.2em);
+}
