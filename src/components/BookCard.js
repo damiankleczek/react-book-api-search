@@ -13,10 +13,7 @@ const BookCard = ({ book }) => {
   const isbnNums = book.volumeInfo.industryIdentifiers;
   const bookPreviewUrl = book.volumeInfo.previewLink;
 
-  const getIsbn = nums => {
-    const isbn13 = nums?.find(num => num.type === 'ISBN_13')?.identifier;
-    return isbn13;
-  };
+  const getIsbn = nums => nums?.find(num => num.type === 'ISBN_13')?.identifier;
 
   return (
     <div className="book">

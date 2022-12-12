@@ -18,10 +18,7 @@ const App = () => {
     setCurrentBooks(slicedBooks);
   }, [books, currentPage]);
 
-  const handleSetBooks = books => {
-    setBooks(books);
-  };
-
+  const handleSetBooks = books => setBooks(books);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const indexOfLastBook = currentPage * booksPerPage;

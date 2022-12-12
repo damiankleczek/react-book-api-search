@@ -4,9 +4,7 @@ import searchIcon from '../search.svg';
 const Searchbar = ({ searchUrl, maxResults, handleSetBooks }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleInputChange = value => {
-    setSearchTerm(value);
-  };
+  const handleInputChange = value => setSearchTerm(value);
 
   const searchQuery = `${searchUrl}?q=${searchTerm}&maxResults=${maxResults}`;
 
