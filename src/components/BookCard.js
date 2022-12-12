@@ -2,7 +2,7 @@ import React from 'react';
 
 import DetailInfo from './DetailInfo';
 
-function BookCard({ book }) {
+const BookCard = ({ book }) => {
   const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
   const placeholderUrl =
     'https://dummyimage.com/208x320/fff/000000&text=Image+Not+Available';
@@ -47,6 +47,6 @@ function BookCard({ book }) {
       </div>
     </div>
   );
-}
+};
 
 export default BookCard;

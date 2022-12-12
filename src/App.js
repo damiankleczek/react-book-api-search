@@ -7,7 +7,7 @@ import Pagination from './components/Pagination';
 
 import './App.css';
 
-function App() {
+const App = () => {
   const [books, setBooks] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPage] = useState(10);
@@ -59,6 +59,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

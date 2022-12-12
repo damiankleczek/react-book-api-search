@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import searchIcon from '../search.svg';
 
-function Searchbar({ searchUrl, maxResults, handleSetBooks }) {
+const Searchbar = ({ searchUrl, maxResults, handleSetBooks }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = value => {
@@ -39,6 +39,6 @@ function Searchbar({ searchUrl, maxResults, handleSetBooks }) {
       />
     </div>
   );
-}
+};
 
 export default Searchbar;
